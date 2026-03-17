@@ -1,40 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Kaggle Notebook Trigger
 
-## Getting Started
+A web application to trigger Kaggle notebooks directly from your browser. This project provides a clean, responsive UI with dark mode support and real-time status feedback for your Kaggle operations.
 
-First, run the development server:
+![Screenshot](public/kaggle_trigger_screenshot.png)
+
+## 🚀 Features
+
+*   **One-Click Operations**: Easily push Kaggle notebooks without leaving your web browser.
+*   **Professional UI**: A polished and modern user interface with a responsive layout, hover animations, and shadows.
+*   **Dark/Light Mode**: Automatically adapts to your system's color scheme for a comfortable viewing experience.
+*   **Real-Time Feedback**: Get instant status updates with clear success or error messages for each operation.
+*   **Built with Next.js**: A production-ready application built on the powerful React framework, Next.js.
+*   **Extensible**: The API backend can be easily extended to support more Kaggle CLI commands.
+
+## ⚙️ How It Works
+
+This application is a Next.js project that uses API routes to execute Kaggle CLI commands on the server.
+
+1.  The frontend, built with React and styled with CSS Modules, provides a user interface with buttons to trigger API calls.
+2.  When a button is clicked, a request is sent to a Next.js API route (e.g., `/api/pushKaggle`).
+3.  The API route uses Node.js's `child_process.exec` to run the corresponding `kaggle` command.
+4.  The output of the command is captured and sent back to the frontend as a JSON response.
+5.  The frontend displays the response to the user, indicating the success or failure of the operation.
+
+## 📖 Getting Started
+
+Follow these steps to set up and run the project locally.
+
+### Step 1: Clone the Repository
+
+First, clone this repository to your local machine:
+
+```bash
+git clone https://github.com/your-username/kaggle-trigger-app.git
+cd kaggle-trigger-app
+```
+
+### Step 2: Prerequisites
+
+Before you can run the application, you need to have the following installed:
+
+*   **Node.js**: Version 18 or higher. You can download it from [nodejs.org](https://nodejs.org/).
+*   **Python**: The Kaggle CLI is a Python package. You can download Python from [python.org](https://python.org/).
+*   **Kaggle CLI**: Install the Kaggle command-line interface using pip:
+    ```bash
+    pip install kaggle
+    ```
+
+### Step 3: Kaggle API Credentials
+
+To use the Kaggle API, you need to authenticate with your Kaggle account.
+
+1.  Go to your Kaggle account page at `https://www.kaggle.com/<your-username>/account`.
+2.  Click on the **"Create New API Token"** button. This will download a `kaggle.json` file.
+3.  Place the `kaggle.json` file in the required directory:
+    *   **Windows**: `C:\Users\<Your-Username>\.kaggle\`
+    *   **macOS/Linux**: `~/.kaggle/`
+
+    You may need to create the `.kaggle` directory if it doesn't exist.
+
+### Step 4: Install Dependencies
+
+Install the project's Node.js dependencies using npm:
+
+```bash
+npm install
+```
+
+### Step 5: Run the Application
+
+Now, you can start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Here is an overview of the core files and directories in this project:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+```
+.
+├── kaggle-notebook/
+│   |── notebook.ipynb      # Your Kaggle notebook goes here.
+|   |── kernel-metadata.json # Metadata about the kaggle account and the notebook.
+├── pages/
+│   ├── _app.js             # Main App component, used for global styles.
+│   ├── index.js            # The main page of the application (your UI).
+│   └── api/
+│       └── pushKaggle.js   # API route for pushing the notebook.
+├── public/
+│   └── ...                 # Static assets like images and icons.
+├── styles/
+│   ├── globals.css         # Global styles for the application.
+│   └── Home.module.css     # CSS Modules for styling the home page.
+├── .gitignore              # A list of files and folders to be ignored by Git.
+├── next.config.mjs         # Configuration file for Next.js.
+├── package.json            # Contains the project's dependencies and scripts.
+└── README.md               # You are here!
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔌 API Endpoints
 
-## Learn More
+*   **`POST /api/pushKaggle`**: Pushes the notebook in the `kaggle-notebook` directory to Kaggle.
 
-To learn more about Next.js, take a look at the following resources:
+## 🔧 Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+*   **Notebook Path**: Update the notebook path in `pages/api/pushKaggle.js` if you change the location of your notebook.
+*   **Styling**: Customize the application's appearance by editing the CSS variables and classes in `styles/Home.module.css`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
