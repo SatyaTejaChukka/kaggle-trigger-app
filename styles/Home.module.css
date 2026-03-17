@@ -17,6 +17,20 @@
   background-color: var(--background);
 }
 
+.status {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--text-secondary);
+  margin-top: 24px;
+  padding: 12px 20px;
+  background: rgba(0,0,0,0.05);
+  border-radius: 8px;
+  border-left: 4px solid var(--text-secondary);
+  transition: all 0.3s ease;
+  max-width: 440px;
+}
+
 .main {
   display: flex;
   min-height: 100vh;
@@ -87,10 +101,28 @@ a.primary {
   background: var(--text-primary);
   color: var(--background);
   gap: 8px;
+  box-shadow: 0 4px 14px 0 rgba(0,0,0,0.15);
+  transform: translateY(0);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a.primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.12);
 }
 
 a.secondary {
+  background: transparent;
+  color: var(--text-primary);
   border-color: var(--button-secondary-border);
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+  transform: translateY(0);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a.secondary:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1);
 }
 
 /* Enable hover only on non-touch devices */
@@ -98,11 +130,15 @@ a.secondary {
   a.primary:hover {
     background: var(--button-primary-hover);
     border-color: transparent;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px 0 rgba(0,0,0,0.2);
   }
 
   a.secondary:hover {
     background: var(--button-secondary-hover);
     border-color: transparent;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px 0 rgba(0,0,0,0.12);
   }
 }
 
@@ -129,13 +165,18 @@ a.secondary {
 
   .page {
     --background: #000;
-    --foreground: #000;
+    --foreground: #111;
 
     --text-primary: #ededed;
-    --text-secondary: #999;
+    --text-secondary: #aaa;
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+    --button-primary-hover: #555;
+    --button-secondary-hover: #222;
+    --button-secondary-border: #333;
+  }
+
+  .status {
+    background: rgba(255,255,255,0.05);
+    border-left-color: var(--text-secondary);
   }
 }
