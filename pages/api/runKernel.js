@@ -2,6 +2,8 @@ import fs from "fs";
 import {
   ensureTargetNotebookIsSelected,
   getKaggleJsonPath,
+  getKernelId,
+  getKernelStatusDetails,
   NOTEBOOK_PATH,
   prepareNotebookForPush,
   runKaggleCommand
@@ -33,17 +35,23 @@ export default async function handler(req, res) {
       ensureTargetNotebookIsSelected();
     }
 
+    const kernelId = getKernelId();
     const output = await runKaggleCommand(["kernels", "push", "-p", NOTEBOOK_PATH]);
+    const statusDetails = await getKernelStatusDetails(kernelId);
 
     return res.status(200).json({
       success: true,
       useCustomFileName,
       fileName,
-      message: "Notebook pushed successfully.",
-      output
+      kernelId: statusDetails.kernelId,
+      kernelUrl: statusDetails.kernelUrl,
+      message: `Kernel push succeeded. Current Kaggle status: ${statusDetails.status}.`,
+      output,
+      status: statusDetails.status,
+      statusOutput: statusDetails.rawOutput
     });
   } catch (error) {
-    console.error("Error in pushKaggle API:", error.message);
+    console.error("Error in runKernel API:", error.message);
 
     return res.status(500).json({
       success: false,

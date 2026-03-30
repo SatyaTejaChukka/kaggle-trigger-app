@@ -1,0 +1,28 @@
+[{"stream_name":"stderr","time":11.047797163,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.047870553,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.047876383,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.047880403,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":11.863888326,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.863942087,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.863947696,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.863951356,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":13.304561445,"data":"Kaggle notebook triggered successfully!\n"}
+,{"stream_name":"stdout","time":13.378155497,"data":"Notebook run at: 2026-03-17_09-32-27\n"}
+,{"stream_name":"stdout","time":13.413513301,"data":"Run file created: /kaggle/working/runtime_logs/run_2026-03-17_09-32-27.txt\n"}
+,{"stream_name":"stdout","time":13.432529705,"data":"History updated: /kaggle/working/runtime_logs/run_history.txt\n"}
+,{"stream_name":"stdout","time":13.451790098,"data":"\n"}
+,{"stream_name":"stdout","time":13.451842478,"data":"Files currently in runtime_logs:\n"}
+,{"stream_name":"stdout","time":13.451846729,"data":"['run_history.txt', 'run_2026-03-17_09-32-27.txt']\n"}
+,{"stream_name":"stderr","time":16.83361678,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":16.83368477,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":17.058020798,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":17.058069498,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":17.728988582,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":17.729039491,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":17.771640984,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":18.077587264,"data":"[NbConvertApp] Writing 10963 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":20.820039273,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":20.820118203,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":20.845193604,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":21.826248442,"data":"[NbConvertApp] Writing 284559 bytes to __results__.html\n"}
+]

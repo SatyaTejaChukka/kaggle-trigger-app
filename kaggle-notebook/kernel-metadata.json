@@ -1,7 +1,7 @@
 {
-  "id": "satyatejachukka/kaggle-trigger-test",
+  "id": "satyatejachukka/read-and-write-to-google-drive",
   "title": "Kaggle Trigger Test",
-  "code_file": "notebook.ipynb",
+  "code_file": "read-and-write-to-google-drive.ipynb",
   "language": "python",
   "kernel_type": "notebook",
   "is_private": true,
